@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clickable Options</title>
+<style>
+    /* CSS for styling options */
+    .options {
+        list-style-type: none;
+        padding: 0;
+    }
+    head,body{
+        background-color: aquamarine;
+        text-align: center;
+    }
+
+    .option {
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .option:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+</head>
+<body>
+
+<!-- HTML for clickable options -->
+<ul class="options">
+    <li class="option" data-page="myaccount1.html">EMPLOYEE</li>
+
+
+    <li class="option" data-page="myaccount2.html">EMPLOYER</li>
+    
+</ul>
+
+<script>
+    // JavaScript to handle click events on options
+    document.addEventListener('DOMContentLoaded', function () {
+        var options = document.querySelectorAll('.option');
+        options.forEach(function (option) {
+            option.addEventListener('click', function () {
+                var page = option.getAttribute('data-page');
+                window.location.href = page;
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
